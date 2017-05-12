@@ -13,9 +13,9 @@ module.exports = {
         ]
   },
   output: {
-    filename: 'vendor.bundle.js',
+    filename: 'dll.js',
     path: path.resolve(__dirname, './dist'),
-    library: 'vendor_lib',
+    library: 'dll_lib',
   },
   module: {
     loaders: [
@@ -30,8 +30,8 @@ module.exports = {
   },
   plugins: [
       new webpack.DllPlugin({
-        name: 'vendor_lib',
-        path: 'dist/vendor-manifest.json',
+        name: 'dll_lib',
+        path: 'dist/manifest.json',
       }),
       new ExtractTextPlugin('dll.css')
   ]
