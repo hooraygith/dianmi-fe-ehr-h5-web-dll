@@ -1,6 +1,8 @@
-﻿#忽略.idea文件夹的内容#
-
-.vscode/
-.idea/
-.svn/
-node_modules/
+#忽略文件夹的内容#
+.vscode
+.idea
+*.log
+node_modules
+target
+yarn-error.log
+/build/server.config.json
