@@ -7,7 +7,12 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
     entry: {
-        dll: ['./src/index.js']
+        dll: [
+            'vue',
+            'vuex',
+            'vue-router',
+            'zepto'
+        ]
     },
     output: {
         filename: '[name].js',
