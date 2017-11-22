@@ -44,8 +44,7 @@
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.8.2"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "browserslist": [
     "android >= 4.3",
     "ios >= 8"

@@ -8,7 +8,14 @@ module.exports = {
     output: {
         filename: '[name]-[hash:8].js',
         chunkFilename: '[name]-[chunkhash:8].js',
-        publicPath: '/'
+        publicPath: '/',
+        crossOriginLoading: 'anonymous',
+        library: '[name]',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
+    },
+    externals: {
+        'dll': 'dll'
     },
     module: {
         rules: [{

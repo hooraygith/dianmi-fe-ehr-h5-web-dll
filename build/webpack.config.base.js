@@ -15,9 +15,10 @@ module.exports = {
         ]
     },
     output: {
-        // name hash chunkhash
         filename: '[name].js',
-        publicPath: '/'
+        library: '[name]',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     resolve: {
         modules: ['node_modules', path.join(__dirname, '../src')],
