@@ -21,7 +21,7 @@ module.exports = {
         umdNamedDefine: true
     },
     resolve: {
-        modules: ['node_modules', path.join(__dirname, '../src')],
+        modules: ['node_modules'],
         alias: {
             'vue': 'vue/dist/vue.common.js'
         },
@@ -76,9 +76,6 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             Vue: 'vue'
-        }),
-
-        // css 插入 html head
-        new ExtractTextPlugin('dll.css')
+        })
     ]
 }

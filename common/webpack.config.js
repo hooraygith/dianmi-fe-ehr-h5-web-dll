@@ -9,10 +9,7 @@ module.exports = {
         filename: '[name]-[hash:8].js',
         chunkFilename: '[name]-[chunkhash:8].js',
         publicPath: '/',
-        crossOriginLoading: 'anonymous',
-        library: '[name]',
-        libraryTarget: 'umd',
-        umdNamedDefine: true
+        crossOriginLoading: 'anonymous'
     },
     externals: {
         'dll': 'dll'
@@ -117,7 +114,7 @@ module.exports = {
         }]
     },
     resolve: {
-        modules: ['node_modules'],
+        modules: [path.join(process.cwd(), 'node_modules')],
         alias: {
             'vue': 'vue/dist/vue.common.js'
         }

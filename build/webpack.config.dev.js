@@ -6,7 +6,6 @@ const packageInfo = require(process.cwd() + '/package.json')
 
 config.plugins.push(
     new webpack.DllPlugin({
-        context: '.',
         name: '[name]',
         path: `dist/dev/${packageInfo.version}/[name].json`
     }),
