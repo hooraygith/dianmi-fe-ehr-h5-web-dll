@@ -1,14 +1,5 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define("dll", [], factory);
-	else if(typeof exports === 'object')
-		exports["dll"] = factory();
-	else
-		root["dll"] = factory();
-})(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
+var dll =
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -18778,4 +18769,3 @@ module.exports = __webpack_require__;
 
 /***/ })
 /******/ ]);
-});
