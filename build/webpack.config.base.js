@@ -7,7 +7,12 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
     entry: {
-        dll: [path.resolve(__dirname, '../src/index.js')]
+        dll: [
+            'vue',
+            'vuex',
+            'vue-router',
+            'zepto'
+        ]
     },
     output: {
         // name hash chunkhash

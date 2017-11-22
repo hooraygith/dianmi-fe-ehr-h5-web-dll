@@ -2,6 +2,7 @@
 .vscode
 .idea
 *.log
+dist
 node_modules
 target
 yarn-error.log

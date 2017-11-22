@@ -1,22 +1,21 @@
 {
-  "name": "dianmi-fe-ehr-h5-web-dll",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/dll.js",
+  "name": "@dm/h5-dll",
+  "description": "依赖库",
+  "version": "0.0.1",
   "scripts": {
     "dev": "webpack --config ./build/webpack.config.dev.js",
     "pd": "webpack --config ./build/webpack.config.pd.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "vue": "^2.5.7",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "zepto": "^1.2.0"
+  "repository": {
+    "type": "git",
+    "url": ""
   },
-  "devDependencies": {
+  "license": "MIT",
+  "dependencies": {
+    "vue": "2.5.7",
+    "vue-router": "3.0.1",
+    "vuex": "3.0.1",
+    "zepto": "1.2.0",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -43,6 +42,8 @@
     "vue-loader": "^13.4.0",
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1"
+  },
+  "devDependencies": {
   },
   "browserslist": [
     "android >= 4.3",
