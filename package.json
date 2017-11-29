@@ -33,6 +33,7 @@
     "vue": "2.5.9",
     "vue-loader": "13.5.0",
     "vue-router": "3.0.1",
+    "vue-swipe": "2.3.0",
     "vue-template-compiler": "2.5.9",
     "vuex": "3.0.1",
     "vux": "2.7.4",
