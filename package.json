@@ -15,7 +15,7 @@
     "@babel/preset-env": "7.0.0-beta.34",
     "autoprefixer": "7.2.2",
     "babel-loader": "8.0.0-beta.0",
-    "babel-plugin-transform-object-rest-spread": "7.0.0-beta.34",
+    "babel-plugin-transform-object-rest-spread": "7.0.0-beta.3",
     "clean-webpack-plugin": "0.1.17",
     "css-loader": "0.28.7",
     "extract-text-webpack-plugin": "3.0.2",
