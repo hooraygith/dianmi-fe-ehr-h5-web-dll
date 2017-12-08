@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "7.0.0-beta.32",
-    "@babel/polyfill": "7.0.0-beta.32",
-    "@babel/preset-env": "7.0.0-beta.32",
-    "autoprefixer": "7.1.6",
+    "@babel/core": "7.0.0-beta.34",
+    "@babel/polyfill": "7.0.0-beta.34",
+    "@babel/preset-env": "7.0.0-beta.34",
+    "autoprefixer": "7.2.2",
     "babel-loader": "8.0.0-beta.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "clean-webpack-plugin": "0.1.17",
@@ -37,9 +37,9 @@
     "vue-template-compiler": "2.5.9",
     "vuex": "3.0.1",
     "vux": "2.7.4",
-    "vux-loader": "1.1.27",
-    "webpack": "3.8.1",
-    "webpack-dev-server": "2.9.5",
+    "vux-loader": "1.1.28",
+    "webpack": "3.10.0",
+    "webpack-dev-server": "2.9.7",
     "zepto-webpack": "1.2.1"
   },
   "devDependencies": {}
