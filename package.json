@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "7.0.0-beta.34",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.34",
     "@babel/polyfill": "7.0.0-beta.34",
     "@babel/preset-env": "7.0.0-beta.34",
     "autoprefixer": "7.2.2",
