@@ -24,6 +24,11 @@ let config = {
             test: /\.vue$/,
             loader: 'vue-loader',
             options: {
+                cssModules: {
+                    // localIdentName: '[path][name]-[local]-[hash:base64:5]',
+                    localIdentName: '[local]-[hash:base64:5]',
+                    camelCase: true
+                },
                 loaders: {
                     'css': [
                         'vue-style-loader',
