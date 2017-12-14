@@ -93,7 +93,7 @@ module.exports = vuxLoader.merge(config, {
         'vux-ui',
         {
             name: 'less-theme',
-            path: 'src/static/styles/theme.less'
+            path: 'src/static/styles/vux-theme.less'
         }
     ]
 })
