@@ -32,8 +32,14 @@ let config = {
                 loaders: {
                     'css': [
                         'vue-style-loader',
+                        'css-loader',
+                        'postcss-loader',
+                        'sass-loader',
                         {
-                            'loader': 'css-loader!postcss-loader!sass-loader'
+                            loader: 'sass-resources-loader',
+                            options: {
+                                resources: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
+                            }
                         }
                     ]
                 }
@@ -46,7 +52,17 @@ let config = {
             test: /\.(scss|css)$/,
             use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: "css-loader!postcss-loader!sass-loader"
+                    use: [
+                        'css-loader',
+                        'postcss-loader',
+                        'sass-loader',
+                        {
+                            loader: 'sass-resources-loader',
+                            options: {
+                                resources: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
+                            }
+                        }
+                    ]
                 })
         }, {
             test: /\.(jpe?g|svg|png|gif|webp)$/,
