@@ -6,7 +6,7 @@ const packageInfo = require(process.cwd() + '/package.json')
 module.exports = {
     entry: {
         dll: [
-            'vue',
+            'vue/dist/vue.runtime.common.js',
             'vuex',
             'vue-router',
             'zepto-webpack'
