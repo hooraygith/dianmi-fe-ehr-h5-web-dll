@@ -64,14 +64,12 @@ let config = {
             ]
         }, {
             test: /\.less$/,
-            use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        'css-loader',
-                        'postcss-loader',
-                        'less-loader'
-                    ]
-                })
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'postcss-loader',
+                'less-loader'
+            ]
         }, {
             test: /\.(jpe?g|svg|png|gif|webp)$/,
             loader: 'url-loader',
