@@ -3,6 +3,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const vuxLoader = require('vux-loader')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 let config = {
@@ -22,28 +23,7 @@ let config = {
     module: {
         rules: [{
             test: /\.vue$/,
-            loader: 'vue-loader',
-            options: {
-                cssModules: {
-                    // localIdentName: '[path][name]-[local]-[hash:base64:5]',
-                    localIdentName: '[local]-[hash:base64:5]',
-                    camelCase: true
-                },
-                loaders: {
-                    'css': [
-                        'vue-style-loader',
-                        'css-loader',
-                        'postcss-loader',
-                        'sass-loader',
-                        {
-                            loader: 'sass-resources-loader',
-                            options: {
-                                resources: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
-                            }
-                        }
-                    ]
-                }
-            }
+            loader: 'vue-loader'
         }, {
             test: /\.js$/,
             exclude: /node_modules/,
@@ -54,11 +34,13 @@ let config = {
                 MiniCssExtractPlugin.loader,
                 'css-loader',
                 'postcss-loader',
-                'sass-loader',
+                'resolve-url-loader',
                 {
-                    loader: 'sass-resources-loader',
+                    loader: 'sass-loader',
                     options: {
-                        resources: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
+                        modules: true,
+                        localIdentName: '[path][name]-[local]-[hash:base64:5]',
+                        includePaths: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
                     }
                 }
             ]
@@ -90,7 +72,8 @@ let config = {
         new webpack.ProvidePlugin({
             Vue: 'vue',
             $: 'zepto-webpack'
-        })
+        }),
+        new VueLoaderPlugin()
     ]
 }
 
