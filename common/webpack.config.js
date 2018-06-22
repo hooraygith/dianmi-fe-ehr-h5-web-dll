@@ -3,7 +3,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const vuxLoader = require('vux-loader')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 let config = {
     output: {
@@ -50,20 +50,18 @@ let config = {
             loader: 'babel-loader'
         }, {
             test: /\.(scss|css)$/,
-            use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        'css-loader',
-                        'postcss-loader',
-                        'sass-loader',
-                        {
-                            loader: 'sass-resources-loader',
-                            options: {
-                                resources: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
-                            }
-                        }
-                    ]
-                })
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'postcss-loader',
+                'sass-loader',
+                {
+                    loader: 'sass-resources-loader',
+                    options: {
+                        resources: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
+                    }
+                }
+            ]
         }, {
             test: /\.less$/,
             use: ExtractTextPlugin.extract({
