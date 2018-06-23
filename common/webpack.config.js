@@ -1,10 +1,14 @@
 'use strict'
 
+const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const vuxLoader = require('vux-loader')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const variable = fs.readFileSync(path.resolve(process.cwd(), 'src/static/styles/variable.scss'), 'utf8')
+
 
 let config = {
     output: {
@@ -32,15 +36,20 @@ let config = {
             test: /\.(scss|css)$/,
             use: [
                 MiniCssExtractPlugin.loader,
-                'css-loader',
+                // 'css-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        localIdentName: '[local]-[hash:base64:5]'
+                    }
+                },
                 'postcss-loader',
                 'resolve-url-loader',
                 {
                     loader: 'sass-loader',
                     options: {
-                        modules: true,
-                        localIdentName: '[path][name]-[local]-[hash:base64:5]',
-                        includePaths: [path.resolve(process.cwd(), 'src/static/styles/variable.scss')]
+                        data: variable
                     }
                 }
             ]
@@ -77,12 +86,14 @@ let config = {
     ]
 }
 
-module.exports = vuxLoader.merge(config, {
-    plugins: [
-        'vux-ui',
-        {
-            name: 'less-theme',
-            path: 'src/static/styles/vux-theme.less'
-        }
-    ]
-})
+module.exports = config
+
+// module.exports = vuxLoader.merge(config, {
+//     plugins: [
+//         'vux-ui',
+//         {
+//             name: 'less-theme',
+//             path: 'src/static/styles/vux-theme.less'
+//         }
+//     ]
+// })
