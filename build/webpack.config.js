@@ -4,6 +4,7 @@ const Clean = require('clean-webpack-plugin')
 const packageInfo = require(process.cwd() + '/package.json')
 
 module.exports = {
+    mode: 'production',
     entry: {
         dll: [
             'vue/dist/vue.runtime.common.js',
@@ -27,11 +28,6 @@ module.exports = {
         new webpack.DllPlugin({
             name: '[name]',
             path: `dist/${packageInfo.version}/[name].json`
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
         }),
         new Clean(['dist'], {
             root: process.cwd()
