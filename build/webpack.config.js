@@ -23,15 +23,13 @@ module.exports = {
             loader: 'babel-loader'
         }]
     },
+    optimization: {
+        minimize: true
+    },
     plugins: [
         new webpack.DllPlugin({
             name: '[name]',
             path: `dist/${packageInfo.version}/[name].json`
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
         }),
         new Clean(['dist'], {
             root: process.cwd()
